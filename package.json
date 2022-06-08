@@ -27,9 +27,12 @@
     ]
   },
   "dependencies": {
+    "framer-motion": "6.3.11",
+    "i18n": "0.15.0",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "sass": "1.52.2"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.2",

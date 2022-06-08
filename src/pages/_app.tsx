@@ -1,6 +1,19 @@
 import { AppProps } from 'next/app';
-import '@/styles/global.css';
+import { AnimatePresence } from 'framer-motion';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+import '@/styles/global.css';
+import { CommonLayout } from '@/layouts';
+
+export default function MyApp({ Component, pageProps, router }: AppProps) {
+  return (
+    <AnimatePresence
+      initial={false}
+      exitBeforeEnter
+      onExitComplete={() => window.scrollTo(0, 0)}
+    >
+      <CommonLayout key={router.route}>
+        <Component {...pageProps} />
+      </CommonLayout>
+    </AnimatePresence>
+  );
 }
