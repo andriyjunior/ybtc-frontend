@@ -1,0 +1,86 @@
+@import 'styles';
+
+.root {
+  display: none;
+
+  @include md {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.burger {
+  height: 10px;
+  width: 28px;
+  position: relative;
+  border: none;
+  background: none;
+  z-index: $i_menu;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $c_secondary;
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $c_secondary;
+    transition: transform 0.2s;
+  }
+
+  &.opened {
+    &::before {
+      top: 4px;
+      transform: rotate(-45deg);
+      background-color: $c_blue;
+    }
+    &::after {
+      bottom: 4px;
+      transform: rotate(45deg);
+      background-color: $c_blue;
+    }
+  }
+}
+
+.links {
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  padding-top: 12px;
+
+  &.active {
+    color: $c_blue;
+  }
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+}
+
+.languageLink {
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 8px !important;
+  }
+
+  &.active {
+    filter: saturate(0);
+  }
+}

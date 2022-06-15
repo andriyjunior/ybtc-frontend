@@ -1,0 +1,9 @@
+@import 'styles';
+
+.root {
+  width: 100%;
+
+  @include md {
+    width: 90%;
+  }
+}

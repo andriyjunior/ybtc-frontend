@@ -12,31 +12,40 @@
     .icon {
       background-color: $c_blue;
     }
+    .svg {
+      transform: scale(1.05);
+    }
   }
+}
 
-  .icon {
-    width: 58px;
-    height: 58px;
-    background-color: $c_secondary;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease-in;
-  }
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: $c_secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition-property: background-color width height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
 
-  .bottom {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
+.bottom {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 
-  .title {
-    padding-top: 16px;
-    font-size: 22px;
-    font-weight: normal;
-    position: relative;
-  }
+.title {
+  padding-top: 16px;
+  font-size: 22px;
+  font-weight: normal;
+  position: relative;
+}
+.svg {
+  transform: scale(1);
+  transition: transform 0.2s ease-in;
 }
 
 .description {

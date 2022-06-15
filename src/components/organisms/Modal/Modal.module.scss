@@ -1,0 +1,29 @@
+@import 'styles';
+
+.root {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: $c_dark, $alpha: 0.6);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.body {
+  padding: 24px 36px;
+  float: right;
+  width: 70%;
+  height: 100vh;
+  background: $c_white;
+  z-index: 999;
+}

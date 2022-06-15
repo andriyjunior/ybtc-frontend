@@ -6,7 +6,11 @@
   height: 60px;
   background-color: $c_white;
   border-bottom: 1px solid $c_blue;
-  z-index: $i_menu;
+  z-index: 9999;
+
+  @include md {
+    height: 50px;
+  }
 }
 
 .fixed {
@@ -15,10 +19,15 @@
   top: -100%;
   background-color: rgba($color: $c_white, $alpha: 0.9);
   animation: down 0.5s forwards;
+
+  @include md {
+    height: 40px;
+  }
 }
 
 .root {
-  width: $app_width;
+  padding: 0 24px;
+  max-width: $app_width;
   margin: 0 auto;
   height: 100%;
   display: flex;
@@ -35,12 +44,20 @@
 .brand {
   font-weight: bold;
   font-size: 20px;
+
+  @include md {
+    font-size: 14px;
+  }
 }
 
 .right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include md {
+    display: none;
+  }
 }
 
 .links {
@@ -57,6 +74,10 @@
 
   &:not(:last-child) {
     padding-right: 46px;
+
+    @include lg {
+      padding-right: 26px;
+    }
   }
 
   &:hover {
@@ -89,14 +110,5 @@
 
   &.active {
     filter: saturate(0);
-  }
-}
-
-@keyframes down {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 0;
   }
 }
