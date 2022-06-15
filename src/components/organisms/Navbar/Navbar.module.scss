@@ -1,0 +1,65 @@
+@import 'styles';
+
+.header {
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  background-color: $c_white;
+  z-index: $i_menu;
+}
+
+.root {
+  width: $app_width;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.link {
+  font-size: 14px;
+  color: $c_dark_blue;
+
+  &:not(:last-child) {
+    padding-right: 46px;
+  }
+
+  &.active {
+    color: $c_blue;
+  }
+}
+
+.separator {
+  margin: 0 24px;
+  height: 24px;
+  width: 1px;
+  background-color: $c_blue;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+}
+
+.languageLink {
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 8px !important;
+  }
+}
