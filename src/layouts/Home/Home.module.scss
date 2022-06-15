@@ -28,7 +28,7 @@
   background-color: rgba($color: $c_white, $alpha: 0.6);
   text-align: center;
   bottom: -100%;
-  animation: back-slide 2s forwards;
+  animation: push-up 2s forwards;
 
   .title {
     padding: 0;
@@ -56,6 +56,10 @@
 .main {
   width: $app_width;
   margin: 0 auto;
+
+  @include xl {
+    width: 100%;
+  }
 }
 
 .cards {
@@ -63,6 +67,11 @@
   padding-bottom: 44px;
   display: flex;
   justify-content: space-between;
+
+  @include md {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .recentTweets {
@@ -75,23 +84,11 @@
 
 .tweets {
   display: flex;
+  gap: 24px;
   justify-content: space-between;
-}
 
-@keyframes back-slide {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  @include lg {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

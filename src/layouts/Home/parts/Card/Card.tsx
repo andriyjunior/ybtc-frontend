@@ -14,7 +14,12 @@ export const Card: FC<ICardProps> = ({ icon, title, description }) => {
   return (
     <div className={styles.root}>
       <span className={styles.icon}>
-        <Image src={`/images/svgs/${icon}.svg`} width={36} height={36} />
+        <Image
+          src={`/images/svgs/${icon}.svg`}
+          className={styles.svg}
+          width={36}
+          height={36}
+        />
       </span>
       <div className={styles.bottom}>
         <span className={styles.title}>{title}</span>

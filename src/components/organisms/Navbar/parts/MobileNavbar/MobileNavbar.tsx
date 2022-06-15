@@ -1,52 +1,35 @@
-import { useRouter } from 'next/router';
-import { NoScrollLink } from '@/components';
+import { Modal, NoScrollLink } from '@/components';
+import { motion } from 'framer-motion';
 import { ROUTES } from '@/const';
+import { useRouter } from 'next/router';
+import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import styles from './MobileNavbar.module.scss';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-
-import styles from './Navbar.module.scss';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { Modal } from '../Modal';
-import { MobileNavbar } from './parts';
 
-const Navbar = () => {
-  const [isFixed, setFixed] = useState(false);
+export const MobileNavbar: FC = () => {
+  const [isOpened, setOpened] = useState(false);
 
   const { t } = useTranslation();
   const { asPath, pathname, locale } = useRouter();
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    position > 80 ? setFixed(true) : setFixed(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener(`scroll`, handleScroll);
-
-    return () => {
-      window.removeEventListener(`scroll`, handleScroll);
-    };
-  }, []);
-
-  const logoSize = isFixed ? 36 : 56;
-
   return (
-    <header className={`${styles.header} ${isFixed && styles.fixed}`}>
-      <div className={styles.root}>
-        <NoScrollLink passHref href={`/`}>
-          <span className={styles.left}>
-            <Image src="/images/logo.svg" width={logoSize} height={logoSize} />
-            &nbsp;
-            <span className={styles.brand}>Yukon Trades</span>
-          </span>
-        </NoScrollLink>
-        <MobileNavbar />
-        <div className={styles.right}>
+    <div className={styles.root}>
+      <button
+        onClick={() => setOpened((state) => !state)}
+        className={`${styles.burger} ${isOpened && styles.opened}`}
+      />
+
+      {isOpened && (
+        <Modal onClose={() => setOpened(false)}>
           <ul className={styles.links}>
             {ROUTES.map(({ key, href }, idx) => {
               return (
-                <li
+                <motion.li
+                  initial={{ x: 50 }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: idx / 20 }}
                   key={`${href}_${idx}`}
                   className={`${styles.link} ${
                     pathname == href ? styles.active : ``
@@ -55,10 +38,11 @@ const Navbar = () => {
                   <NoScrollLink passHref href={href}>
                     {t(`navbar.${key}`)}
                   </NoScrollLink>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
+
           <span className={styles.languages}>
             <span className={styles.separator} />
             <span
@@ -80,14 +64,8 @@ const Navbar = () => {
               </Link>
             </span>
           </span>
-        </div>
-      </div>
-    </header>
+        </Modal>
+      )}
+    </div>
   );
 };
-
-export const getStaticProps = async (context: any) => ({
-  props: { ...context },
-});
-
-export default Navbar;
