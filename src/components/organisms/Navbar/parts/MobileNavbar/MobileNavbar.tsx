@@ -26,10 +26,7 @@ export const MobileNavbar: FC = () => {
           <ul className={styles.links}>
             {ROUTES.map(({ key, href }, idx) => {
               return (
-                <motion.li
-                  initial={{ x: 50 }}
-                  animate={{ x: 0 }}
-                  transition={{ delay: idx / 20 }}
+                <li
                   key={`${href}_${idx}`}
                   className={`${styles.link} ${
                     pathname == href ? styles.active : ``
@@ -38,7 +35,7 @@ export const MobileNavbar: FC = () => {
                   <NoScrollLink passHref href={href}>
                     {t(`navbar.${key}`)}
                   </NoScrollLink>
-                </motion.li>
+                </li>
               );
             })}
           </ul>
