@@ -1,11 +1,13 @@
+import { Twit } from '@/components';
 import { AnimationLayout } from '@/layouts';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 import styles from './Home.module.scss';
 import { Card } from './parts';
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <AnimationLayout>
       <div className={styles.root}>
@@ -22,9 +24,31 @@ const Home = () => {
 
         <div className={styles.main}>
           <div className={styles.cards}>
-            <Card />
-            <Card />
-            <Card />
+            <Card
+              icon={`comunity`}
+              title={`Yukon for Ukraine`}
+              description={`Learn more about organizing and the unionization process for your workplace`}
+            />
+            <Card
+              icon={`cta`}
+              title={`Yukon for Ukraine`}
+              description={`Learn more about organizing and the unionization process for your workplace`}
+            />
+            <Card
+              icon={`cta`}
+              title={`Yukon for Ukraine`}
+              description={`Learn more about organizing and the unionization process for your workplace`}
+            />
+          </div>
+
+          <div className={styles.recentTweets}>
+            <h3 className={styles.title}>Recent Tweets</h3>
+            <div className={styles.tweets}>
+              <Twit />
+              <Twit />
+              <Twit />
+              <Twit />
+            </div>
           </div>
         </div>
       </div>

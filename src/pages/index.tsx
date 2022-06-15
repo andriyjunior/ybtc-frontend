@@ -3,8 +3,8 @@ import { Head } from '@/components';
 import { HomeLayout } from '@/layouts';
 
 const metadata = {
-  title: `Home page`,
-  desc: [{ name: `description`, content: `Description of helping of Ukraine` }],
+  title: `Yukon Trades - Home`,
+  desc: [{ name: `description`, content: `Yukon Trades` }],
 };
 
 export default function Home() {

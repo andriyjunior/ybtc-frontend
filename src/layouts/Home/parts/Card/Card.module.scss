@@ -2,6 +2,44 @@
 
 .root {
   width: 252px;
-  height: 235px;
-  background-color: $c_seconday;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .icon {
+      background-color: $c_blue;
+    }
+  }
+
+  .icon {
+    width: 58px;
+    height: 58px;
+    background-color: $c_secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in;
+  }
+
+  .bottom {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    padding-top: 16px;
+    font-size: 22px;
+    font-weight: normal;
+    position: relative;
+  }
+}
+
+.description {
+  padding-top: 4px;
+  font-size: 14px;
 }
