@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AboutLayout } from '@/layouts';
 
 const About = () => {
@@ -5,3 +6,9 @@ const About = () => {
 };
 
 export default About;
+
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale)),
+  },
+});

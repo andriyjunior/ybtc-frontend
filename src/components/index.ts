@@ -1,3 +1,2 @@
-export * from './NoScrollLink';
-export * from './Head';
-export * from './Navbar';
+export * from './molecules';
+export * from './organisms';
