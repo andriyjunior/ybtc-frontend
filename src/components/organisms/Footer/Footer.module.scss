@@ -7,3 +7,25 @@
   text-align: center;
   color: #fff;
 }
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  padding-right: 24px;
+}
+
+.section {
+  max-width: 200px;
+  text-align: left;
+}
+
+.title {
+  text-align: left;
+}
+
+.description {
+  font-size: 12px;
+}

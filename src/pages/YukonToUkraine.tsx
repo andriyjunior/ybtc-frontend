@@ -5,7 +5,7 @@ import { DonationLayout } from '@/layouts';
 const Donation = () => {
   return (
     <>
-      <Head title={`Home page`} desc={[]} />
+      <Head title={`Yukon Trades - Home`} desc={[]} />
       <DonationLayout />
     </>
   );

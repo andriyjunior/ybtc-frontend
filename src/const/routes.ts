@@ -4,6 +4,10 @@ export const ROUTES = [
     key: `home`,
   },
   {
+    href: `/YukonToUkraine`,
+    key: `YukonToUkraine`,
+  },
+  {
     href: `/about`,
     key: `about`,
   },
@@ -11,8 +15,8 @@ export const ROUTES = [
     href: `/contact-us`,
     key: `contacts`,
   },
-  {
-    href: `/donation`,
-    key: `donation`,
-  },
+  // {
+  //   href: `/donation`,
+  //   key: `donation`,
+  // },
 ];

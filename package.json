@@ -39,6 +39,7 @@
     "react-dom": "18.1.0",
     "react-i18next": "11.17.0",
     "react-intl": "6.0.4",
+    "react-twitter-embed": "4.0.4",
     "sass": "1.52.2"
   },
   "devDependencies": {
