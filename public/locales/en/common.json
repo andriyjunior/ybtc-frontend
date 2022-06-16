@@ -5,5 +5,11 @@
     "contacts": "Contacts",
     "donation": "Donation",
     "YukonToUkraine": "YukonToUkraine"
+  },
+  "success": {
+    "text": "Thank you so much for your donation!"
+  },
+  "payment": {
+    "methods": "Payment Methods"
   }
 }

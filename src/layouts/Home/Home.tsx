@@ -70,7 +70,6 @@ const Home = () => {
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
-                delay={0.5 + idx / 5}
               />
             ))}
           </div>

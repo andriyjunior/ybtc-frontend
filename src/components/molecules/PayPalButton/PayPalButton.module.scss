@@ -1,0 +1,20 @@
+@import 'styles';
+
+.root {
+  height: 55px;
+  width: 100%;
+  background-color: $c_orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4pxr;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+}
+
+.logo {
+  height: 30px;
+}

@@ -10,7 +10,6 @@ interface ICardProps {
   icon: string;
   title: string;
   description: string;
-  delay: number;
 }
 
 const variants = {
@@ -18,7 +17,7 @@ const variants = {
   hidden: { opacity: 0, y: 50 },
 };
 
-const Card: FC<ICardProps> = ({ icon, title, description, delay }) => {
+const Card: FC<ICardProps> = ({ icon, title, description }) => {
   const [ref, inView] = useInView();
 
   const controls = useAnimation();
@@ -35,7 +34,8 @@ const Card: FC<ICardProps> = ({ icon, title, description, delay }) => {
       variants={variants}
       initial={`hidden`}
       animate={controls}
-      transition={{ duration: 1 }}
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.5 }}
       className={styles.root}
     >
       <span className={styles.icon}>

@@ -4,3 +4,4 @@ export * from './About';
 export * from './Home';
 export * from './ContactUs';
 export * from './Donation';
+export * from './Success';
