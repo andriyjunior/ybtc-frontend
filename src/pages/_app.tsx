@@ -3,14 +3,13 @@ import { AnimatePresence } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next';
 
 import { CommonLayout } from '@/layouts';
-import { useEffect } from 'react';
 
 import '@/styles/global.scss';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence
-      initial={false}
+      initial={true}
       exitBeforeEnter
       onExitComplete={() => window.scrollTo(0, 0)}
     >

@@ -20,7 +20,7 @@ const AnimationLayout: FC<IProps> = ({ children }) => {
       variants={variants}
       transition={{ type: `linear` }}
     >
-      {children}
+      <>{children}</>
     </motion.main>
   );
 };
