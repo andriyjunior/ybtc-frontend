@@ -1,4 +1,5 @@
 import { FC, ReactNode, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 import styles from './Modal.module.scss';
 
@@ -19,10 +20,15 @@ const Modal: FC<IModalProps> = ({ children, onClose }) => {
   }, []);
 
   return (
-    <div className={styles.root}>
+    <motion.div
+      initial={{ x: 100 }}
+      hidden={false}
+      animate={{ x: 0 }}
+      className={styles.root}
+    >
       <div onClick={onClose} className={styles.overlay} />
       <div className={styles.body}>{children}</div>
-    </div>
+    </motion.div>
   );
 };
 

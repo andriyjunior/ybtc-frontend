@@ -9,7 +9,7 @@ import styles from './MobileNavbar.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const MobileNavbar: FC = () => {
+const MobileNavbar: FC = () => {
   const [isOpened, setOpened] = useState(false);
 
   const { t } = useTranslation();
@@ -66,3 +66,5 @@ export const MobileNavbar: FC = () => {
     </div>
   );
 };
+
+export default MobileNavbar;

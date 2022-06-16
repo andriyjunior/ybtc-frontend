@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import styles from './Twit.module.scss';
 
-export const Twit: FC = () => {
+const Twit: FC = () => {
   return (
     <div className={styles.root}>
       <TwitterTweetEmbed
@@ -12,3 +12,5 @@ export const Twit: FC = () => {
     </div>
   );
 };
+
+export default Twit;

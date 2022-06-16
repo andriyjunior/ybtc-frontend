@@ -1,1 +1,1 @@
-export * from './Twit';
+export { default as Twit } from './Twit';
