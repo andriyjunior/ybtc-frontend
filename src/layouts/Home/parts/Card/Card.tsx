@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import styles from './Card.module.scss';
 
@@ -8,11 +10,34 @@ interface ICardProps {
   icon: string;
   title: string;
   description: string;
+  delay: number;
 }
 
-const Card: FC<ICardProps> = ({ icon, title, description }) => {
+const variants = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 50 },
+};
+
+const Card: FC<ICardProps> = ({ icon, title, description, delay }) => {
+  const [ref, inView] = useInView();
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start(`visible`);
+    }
+  }, [controls, inView]);
+
   return (
-    <div className={styles.root}>
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial={`hidden`}
+      animate={controls}
+      transition={{ duration: 1 }}
+      className={styles.root}
+    >
       <span className={styles.icon}>
         <Image
           src={`/images/svgs/${icon}.svg`}
@@ -30,7 +55,7 @@ const Card: FC<ICardProps> = ({ icon, title, description }) => {
           <span>Read more</span>
         </Link>
       </div> */}
-    </div>
+    </motion.div>
   );
 };
 

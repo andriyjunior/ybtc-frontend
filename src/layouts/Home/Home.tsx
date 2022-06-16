@@ -2,43 +2,77 @@ import { Twit } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Card } from './parts';
 
 import styles from './Home.module.scss';
-import { Card } from './parts';
+
+const cardsMock = [
+  {
+    icon: `comunity`,
+    title: `Yukon for Ukraine`,
+    description: `Learn more about organizing and the unionization process for your workplace`,
+  },
+  {
+    icon: `cta`,
+    title: `Yukon for Ukraine`,
+    description: `Learn more about organizing and the unionization process for your workplace`,
+  },
+  {
+    icon: `cta`,
+    title: `Yukon for Ukraine`,
+    description: `Learn more about organizing and the unionization process for your workplace`,
+  },
+];
 
 const Home = () => {
   const { t } = useTranslation();
   return (
     <AnimationLayout>
       <div className={styles.root}>
-        <div className={styles.header}>
-          <div className={styles.bottom}>
-            <h1 className={styles.title}>Yukon Building Trades Council</h1>
-            <span className={styles.description}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className={styles.header}
+        >
+          <motion.div
+            initial={{ y: 100, capHeight: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+            className={styles.bottom}
+          >
+            <motion.h1
+              initial={{ opacity: 0, y: `100%` }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
+              className={styles.title}
+            >
+              Yukon Building Trades Council
+            </motion.h1>
+            <motion.span
+              initial={{ opacity: 0, y: `100%` }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className={styles.description}
+            >
               The Yukon Government will be making a further financial
               contribution to match the funds raised by the Yukon Building
               Trades Council.
-            </span>
-          </div>
-        </div>
+            </motion.span>
+          </motion.div>
+        </motion.div>
 
         <div className={styles.main}>
           <div className={styles.cards}>
-            <Card
-              icon={`comunity`}
-              title={`Yukon for Ukraine`}
-              description={`Learn more about organizing and the unionization process for your workplace`}
-            />
-            <Card
-              icon={`cta`}
-              title={`Yukon for Ukraine`}
-              description={`Learn more about organizing and the unionization process for your workplace`}
-            />
-            <Card
-              icon={`cta`}
-              title={`Yukon for Ukraine`}
-              description={`Learn more about organizing and the unionization process for your workplace`}
-            />
+            {cardsMock.map((item, idx) => (
+              <Card
+                key={idx}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                delay={0.5 + idx / 5}
+              />
+            ))}
           </div>
 
           <div className={styles.recentTweets}>
