@@ -9,6 +9,11 @@ interface IModalProps {
   isShown: boolean;
 }
 
+const variantsOverlay = {
+  hidden: { opacity: 0 },
+  animate: { opacity: 1 },
+};
+
 const variants = {
   hidden: { opacity: 0, x: 200 },
   animate: { opacity: 1, x: 0 },
@@ -34,11 +39,11 @@ const Modal: FC<IModalProps> = ({ children, onClose, isShown }) => {
       {isShown && (
         <div className={styles.root}>
           <motion.div
-            variants={variants}
+            variants={variantsOverlay}
             initial="hidden"
             exit="hidden"
             animate="animate"
-            transition={{ ease: `easeOut`, delay: 0 }}
+            transition={{ ease: `easeOut` }}
             onClick={onClose}
             className={styles.overlay}
           />
