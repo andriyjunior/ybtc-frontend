@@ -10,7 +10,7 @@ interface ICardProps {
   description: string;
 }
 
-export const Card: FC<ICardProps> = ({ icon, title, description }) => {
+const Card: FC<ICardProps> = ({ icon, title, description }) => {
   return (
     <div className={styles.root}>
       <span className={styles.icon}>
@@ -33,3 +33,5 @@ export const Card: FC<ICardProps> = ({ icon, title, description }) => {
     </div>
   );
 };
+
+export default Card;
