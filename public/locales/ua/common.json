@@ -5,5 +5,11 @@
     "contacts": "Контакти",
     "donation": "Донати",
     "YukonToUkraine": "YukonToUkraine"
+  },
+  "success": {
+    "text": "Дякуємо за ваш донат!"
+  },
+  "payment": {
+    "methods": "Спосіб платежу"
   }
 }
