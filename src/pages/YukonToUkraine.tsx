@@ -1,17 +1,17 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Head } from '@/components';
-import { DonationLayout } from '@/layouts';
+import { YukonToUkraine } from '@/layouts';
 
-const Donation = () => {
+const yukonToUkraine = () => {
   return (
     <>
       <Head title={`Yukon Trades - Home`} desc={[]} />
-      <DonationLayout />
+      <YukonToUkraine />
     </>
   );
 };
 
-export default Donation;
+export default yukonToUkraine;
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

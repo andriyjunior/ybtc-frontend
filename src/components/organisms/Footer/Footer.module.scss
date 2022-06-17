@@ -18,7 +18,6 @@
 }
 
 .section {
-  max-width: 200px;
   text-align: left;
 }
 
@@ -28,4 +27,16 @@
 
 .description {
   font-size: 12px;
+
+  .item {
+    display: block;
+  }
+}
+
+.email {
+  color: $c_blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

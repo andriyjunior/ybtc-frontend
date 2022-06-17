@@ -55,6 +55,12 @@
   }
 }
 
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .links {
   padding: 0;
   list-style: none;
@@ -83,4 +89,9 @@
   &.active {
     filter: saturate(0);
   }
+}
+
+.copyright {
+  align-self: center;
+  font-size: 12px;
 }

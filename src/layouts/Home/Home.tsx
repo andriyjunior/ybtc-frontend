@@ -11,16 +11,19 @@ const cardsMock = [
     icon: `comunity`,
     title: `Yukon for Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
+    href: `/YukonToUkraine`,
   },
   {
     icon: `cta`,
     title: `Yukon for Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
+    href: `#`,
   },
   {
     icon: `cta`,
     title: `Yukon for Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
+    href: `#`,
   },
 ];
 
@@ -32,13 +35,13 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
           className={styles.header}
         >
           <motion.div
-            initial={{ y: 100, capHeight: 20 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
             className={styles.bottom}
           >
             <motion.h1
@@ -70,6 +73,7 @@ const Home = () => {
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
+                href={item.href}
               />
             ))}
           </div>

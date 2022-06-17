@@ -21,44 +21,53 @@ const MobileNavbar: FC = () => {
         className={`${styles.burger} ${isShown && styles.opened}`}
       />
 
-      <Modal onClose={() => setShown(false)} isShown={isShown}>
-        <ul className={styles.links}>
-          {ROUTES.map(({ key, href }, idx) => {
-            return (
-              <li
-                key={`${href}_${idx}`}
-                className={`${styles.link} ${
-                  pathname == href ? styles.active : ``
-                } `}
-              >
-                <NoScrollLink passHref href={href}>
-                  {t(`navbar.${key}`)}
-                </NoScrollLink>
-              </li>
-            );
-          })}
-        </ul>
+      <Modal
+        className={styles.modal}
+        onClose={() => setShown(false)}
+        isShown={isShown}
+      >
+        <div className={styles.body}>
+          <ul className={styles.links}>
+            {ROUTES.map(({ key, href }, idx) => {
+              return (
+                <li
+                  key={`${href}_${idx}`}
+                  className={`${styles.link} ${
+                    pathname == href ? styles.active : ``
+                  } `}
+                >
+                  <NoScrollLink passHref href={href}>
+                    {t(`navbar.${key}`)}
+                  </NoScrollLink>
+                </li>
+              );
+            })}
+          </ul>
 
-        <span className={styles.languages}>
-          <span className={styles.separator} />
-          <span
-            className={`${styles.languageLink} ${
-              locale === `en` && styles.active
-            }`}
-          >
-            <Link href={asPath} locale="en">
-              <Image src="/images/svgs/flag-us.svg" width={24} height={32} />
-            </Link>
+          <span className={styles.languages}>
+            <span className={styles.separator} />
+            <span
+              className={`${styles.languageLink} ${
+                locale === `en` && styles.active
+              }`}
+            >
+              <Link href={asPath} locale="en">
+                <Image src="/images/svgs/flag-us.svg" width={24} height={32} />
+              </Link>
+            </span>
+            <span
+              className={`${styles.languageLink} ${
+                locale === `ua` && styles.active
+              }`}
+            >
+              <Link href={asPath} locale="ua">
+                <Image src="/images/svgs/flag-ua.svg" width={24} height={32} />
+              </Link>
+            </span>
           </span>
-          <span
-            className={`${styles.languageLink} ${
-              locale === `ua` && styles.active
-            }`}
-          >
-            <Link href={asPath} locale="ua">
-              <Image src="/images/svgs/flag-ua.svg" width={24} height={32} />
-            </Link>
-          </span>
+        </div>
+        <span className={styles.copyright}>
+          Yukon Building Trades {new Date().getFullYear()}©
         </span>
       </Modal>
     </div>

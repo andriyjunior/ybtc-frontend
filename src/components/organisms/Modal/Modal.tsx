@@ -5,6 +5,7 @@ import styles from './Modal.module.scss';
 
 interface IModalProps {
   children: ReactNode;
+  className?: string;
   onClose: () => void;
   isShown: boolean;
 }
@@ -19,7 +20,7 @@ const variants = {
   animate: { opacity: 1, x: 0 },
 };
 
-const Modal: FC<IModalProps> = ({ children, onClose, isShown }) => {
+const Modal: FC<IModalProps> = ({ children, onClose, isShown, className }) => {
   useEffect(() => {
     const prevBodyStyles = document.body.style.overflow;
 
@@ -53,7 +54,7 @@ const Modal: FC<IModalProps> = ({ children, onClose, isShown }) => {
             exit="hidden"
             animate="animate"
             transition={{ ease: `easeOut`, delay: 0.1 }}
-            className={styles.body}
+            className={`${styles.body} ${className}`}
           >
             {children}
           </motion.div>

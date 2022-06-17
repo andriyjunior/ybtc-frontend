@@ -1,0 +1,60 @@
+@import 'styles';
+
+.root {
+}
+
+.title {
+  padding: 16px 0;
+  margin: 0;
+  background-color: $c_primary;
+  text-align: center;
+}
+
+.body {
+  width: $app_width;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include md {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.text {
+  padding-right: 16px;
+  width: 100%;
+  text-align: justify;
+
+  @include md {
+    padding: 0 16px;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.payment {
+  position: sticky;
+  top: 60px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include md {
+    padding: 0 24px;
+    padding-top: 36px;
+    position: initial;
+    width: 100%;
+  }
+}
+
+.paymentTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
