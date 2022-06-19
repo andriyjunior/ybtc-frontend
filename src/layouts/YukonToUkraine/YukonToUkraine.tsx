@@ -1,6 +1,5 @@
-import { PayPalButton } from '@/components';
+import { Image, PayPalButton } from '@/components';
 import { AnimationLayout } from '@/layouts';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import styles from './YukonToUkraine.module.scss';
@@ -10,7 +9,10 @@ const YukonToUkraine = () => {
   return (
     <AnimationLayout>
       <div className={styles.root}>
-        <h1 className={styles.title}>The #YukonToUkraine</h1>
+        <div className={styles.header}>
+          <h1 className={styles.title}>The #YukonToUkraine</h1>
+          <Image src="/images/logo-flag.png" className={styles.imageLogo} />
+        </div>
         <div className={styles.body}>
           <div
             className={styles.text}

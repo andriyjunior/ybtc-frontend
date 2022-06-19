@@ -8,7 +8,7 @@ import styles from './Navbar.module.scss';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Modal } from '../Modal';
-import { MobileNavbar } from './parts';
+import { Flags, MobileNavbar } from './parts';
 
 const Navbar = () => {
   const [isFixed, setFixed] = useState(false);
@@ -61,24 +61,7 @@ const Navbar = () => {
           </ul>
           <span className={styles.languages}>
             <span className={styles.separator} />
-            <span
-              className={`${styles.languageLink} ${
-                locale === `en` && styles.active
-              }`}
-            >
-              <Link href={asPath} locale="en">
-                <Image src="/images/svgs/flag-us.svg" width={24} height={32} />
-              </Link>
-            </span>
-            <span
-              className={`${styles.languageLink} ${
-                locale === `ua` && styles.active
-              }`}
-            >
-              <Link href={asPath} locale="ua">
-                <Image src="/images/svgs/flag-ua.svg" width={24} height={32} />
-              </Link>
-            </span>
+            <Flags />
           </span>
         </div>
       </div>

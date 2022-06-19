@@ -6,7 +6,7 @@ import styles from './Twit.module.scss';
 
 const variants = {
   visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 10 },
 };
 
 const Twit: FC = () => {

@@ -12,6 +12,7 @@ export const CustomImage: FC<IImage> = ({ src, className }) => {
   return (
     <div className={`${styles.container} ${className}`}>
       <Image
+        quality={100}
         src={src}
         width={1170}
         height={500}

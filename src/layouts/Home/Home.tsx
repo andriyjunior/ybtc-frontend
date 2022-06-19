@@ -1,4 +1,4 @@
-import { Twit } from '@/components';
+import { HorizontalSeparator, Twit } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -9,19 +9,19 @@ import styles from './Home.module.scss';
 const cardsMock = [
   {
     icon: `comunity`,
-    title: `Yukon for Ukraine`,
+    title: `Yukon to Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
     href: `/YukonToUkraine`,
   },
   {
     icon: `cta`,
-    title: `Yukon for Ukraine`,
+    title: `Yukon to Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
     href: `#`,
   },
   {
     icon: `cta`,
-    title: `Yukon for Ukraine`,
+    title: `Yukon to Ukraine`,
     description: `Learn more about organizing and the unionization process for your workplace`,
     href: `#`,
   },
@@ -77,7 +77,7 @@ const Home = () => {
               />
             ))}
           </div>
-
+          <HorizontalSeparator />
           <div className={styles.recentTweets}>
             <h3 className={styles.title}>Recent Tweets</h3>
             <div className={styles.tweets}>

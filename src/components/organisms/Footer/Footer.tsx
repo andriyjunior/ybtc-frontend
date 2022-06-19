@@ -11,7 +11,7 @@ const Footer: FC = () => {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <span className={styles.logo}>
-          <Image src="/images/logo.svg" width={160} height={160} />
+          <Image src="/images/logo-white.svg" width={160} height={160} />
         </span>
         <div className={styles.section}>
           <h4 className={styles.title}>{t(`footer.contacts.title`)}</h4>

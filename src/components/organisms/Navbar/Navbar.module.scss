@@ -100,15 +100,3 @@
   display: flex;
   align-items: center;
 }
-
-.languageLink {
-  cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: 8px !important;
-  }
-
-  &.active {
-    filter: saturate(0);
-  }
-}
