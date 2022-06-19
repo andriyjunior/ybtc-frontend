@@ -1,10 +1,12 @@
-import { HorizontalSeparator, Twit } from '@/components';
+import { HorizontalSeparator, Image, LinkToArticle, Twit } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Card } from './parts';
 
 import styles from './Home.module.scss';
+
+import header_ph from 'public/images/header.jpg';
 
 const cardsMock = [
   {
@@ -39,33 +41,42 @@ const Home = () => {
           className={styles.header}
         >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-            className={styles.bottom}
-          >
+            initial={{ x: `-100%` }}
+            animate={{ x: 0 }}
+            transition={{ delay: 2, ease: `easeOut`, duration: 1 }}
+            className={styles.overlay}
+          />
+          <div className={styles.content}>
             <motion.h1
-              initial={{ opacity: 0, y: `100%` }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2.8, duration: 1 }}
               className={styles.title}
             >
               Yukon Building Trades Council
             </motion.h1>
             <motion.span
-              initial={{ opacity: 0, y: `100%` }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3, duration: 1 }}
               className={styles.description}
             >
               The Yukon Government will be making a further financial
               contribution to match the funds raised by the Yukon Building
               Trades Council.
             </motion.span>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3.4 }}
+              className={styles.mouse}
+            >
+              <LinkToArticle href="#main" />
+            </motion.div>
+          </div>
         </motion.div>
 
-        <div className={styles.main}>
+        <div id="main" className={styles.main}>
           <div className={styles.cards}>
             {cardsMock.map((item, idx) => (
               <Card

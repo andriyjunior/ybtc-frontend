@@ -29,7 +29,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const logoSize = isFixed ? 36 : 56;
+  const logoSize = isFixed ? 36 : 48;
 
   return (
     <header className={`${styles.header} ${isFixed && styles.fixed}`}>

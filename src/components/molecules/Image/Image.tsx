@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
 import styles from './Image.module.scss';
 
 interface IImage {
-  src: string;
+  src: string | StaticImageData;
   className?: string;
 }
 

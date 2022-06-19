@@ -1,0 +1,59 @@
+@import 'styles';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mouse {
+  position: relative;
+  height: 30px;
+  width: 16px;
+  border: 1px solid $c_white;
+  border-radius: 100px;
+  cursor: pointer;
+  animation: down-up-pulse 2s ease-in-out infinite forwards;
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 5px;
+  border: 0.5px solid $c_white;
+  border-radius: 10px;
+  transform: translate(-50%);
+  animation: wheel-down 2s ease-in-out infinite forwards;
+}
+
+@keyframes down-up-pulse {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes wheel-down {
+  0% {
+    top: 2px;
+    opacity: 0;
+    height: 0px;
+  }
+
+  50% {
+    opacity: 1;
+    height: 7px;
+  }
+
+  100% {
+    top: 50%;
+    opacity: 0;
+    height: 0px;
+  }
+}
