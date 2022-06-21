@@ -6,9 +6,16 @@ import styles from './Image.module.scss';
 interface IImage {
   src: string | StaticImageData;
   className?: string;
+  layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive' | 'raw' | undefined;
+  objectFit?: 'cover' | 'contain';
 }
 
-export const CustomImage: FC<IImage> = ({ src, className }) => {
+export const CustomImage: FC<IImage> = ({
+  src,
+  className,
+  layout = `responsive`,
+  objectFit,
+}) => {
   return (
     <div className={`${styles.container} ${className}`}>
       <Image
@@ -16,7 +23,8 @@ export const CustomImage: FC<IImage> = ({ src, className }) => {
         src={src}
         width={1170}
         height={500}
-        layout="responsive"
+        layout={layout}
+        objectFit={objectFit}
         className={styles.image}
       />
     </div>

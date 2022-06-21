@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Footer, Navbar } from '@/components';
+import { Footer, Navbar, ToScrollUp } from '@/components';
 
 import styles from './CommonLayout.module.scss';
 
@@ -16,6 +16,7 @@ const CommonLayout: FC<IProps> = ({ children, ...pageProps }) => {
       <Navbar />
       <div className={styles.body}>{children}</div>
       <Footer />
+      <ToScrollUp />
     </div>
   );
 };

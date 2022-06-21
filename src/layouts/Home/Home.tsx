@@ -7,6 +7,7 @@ import { Card } from './parts';
 import styles from './Home.module.scss';
 
 import header_ph from 'public/images/header.jpg';
+import { useIsMobile } from '@/hooks';
 
 const cardsMock = [
   {
@@ -31,6 +32,11 @@ const cardsMock = [
 
 const Home = () => {
   const { t } = useTranslation();
+
+  const { isMobile } = useIsMobile();
+
+  const imageAnimation = isMobile ? { x: 0 } : { x: `30%` };
+  const overlayAnimation = isMobile ? { x: 0 } : { x: `-40%` };
   return (
     <AnimationLayout>
       <div className={styles.root}>
@@ -41,11 +47,25 @@ const Home = () => {
           className={styles.header}
         >
           <motion.div
+            initial={{ x: 0 }}
+            animate={imageAnimation}
+            transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
+            className={styles.imageWrapper}
+          >
+            <Image
+              src={header_ph}
+              layout="fill"
+              objectFit="cover"
+              className={styles.image}
+            />
+          </motion.div>
+          <motion.div
             initial={{ x: `-100%` }}
-            animate={{ x: 0 }}
-            transition={{ delay: 2, ease: `easeOut`, duration: 1 }}
+            animate={overlayAnimation}
+            transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
             className={styles.overlay}
           />
+
           <div className={styles.content}>
             <motion.h1
               initial={{ opacity: 0 }}

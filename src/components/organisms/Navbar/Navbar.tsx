@@ -9,34 +9,42 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Modal } from '../Modal';
 import { Flags, MobileNavbar } from './parts';
+import { useWindowScrollPosition } from '@/hooks';
 
 const Navbar = () => {
   const [isFixed, setFixed] = useState(false);
+  const [isUaPage, setUaPage] = useState(false);
 
   const { t } = useTranslation();
-  const { asPath, pathname, locale } = useRouter();
+  const { pathname } = useRouter();
+  const { scrollPosition } = useWindowScrollPosition();
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
-    position > 80 ? setFixed(true) : setFixed(false);
+    scrollPosition > 80 ? setFixed(true) : setFixed(false);
   };
 
-  useEffect(() => {
-    window.addEventListener(`scroll`, handleScroll);
+  useEffect(
+    () =>
+      pathname.toLowerCase().includes(`yukontoukraine`)
+        ? setUaPage(true)
+        : setUaPage(false),
+    [pathname],
+  );
 
-    return () => {
-      window.removeEventListener(`scroll`, handleScroll);
-    };
-  }, []);
+  useEffect(() => handleScroll(), [scrollPosition]);
 
-  const logoSize = isFixed ? 36 : 48;
+  const logoSize = isFixed ? 36 : 64;
 
   return (
     <header className={`${styles.header} ${isFixed && styles.fixed}`}>
       <div className={styles.root}>
         <NoScrollLink passHref href={`/`}>
           <span className={styles.left}>
-            <Image src="/images/logo.svg" width={logoSize} height={logoSize} />
+            <Image
+              src={`/images/${isUaPage ? `ua` : `main`}-logo.svg`}
+              width={logoSize}
+              height={logoSize}
+            />
             &nbsp;
             <span className={styles.brand}>Yukon Trades</span>
           </span>

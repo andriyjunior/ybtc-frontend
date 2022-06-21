@@ -16,7 +16,7 @@ const YukonToUkraine = () => {
         <div className={styles.body}>
           <div
             className={styles.text}
-            dangerouslySetInnerHTML={{ __html: t(`yukonToUkraine.data`) }}
+            dangerouslySetInnerHTML={{ __html: t(`yukonToUkraine.body`) }}
           />
           <div className={styles.payment}>
             <span className={styles.paymentTitle}>{t(`payment.methods`)}</span>

@@ -1,0 +1,22 @@
+@import 'styles';
+
+.root {
+  width: $app_width;
+  margin: 0 auto;
+
+  @include xl {
+    padding: 0 16px;
+    width: 100%;
+  }
+}
+
+.text {
+  width: 100%;
+
+  a {
+    width: 100%;
+    word-wrap: break-word;
+    color: $c_blue;
+    width: 100px;
+  }
+}
