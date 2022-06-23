@@ -8,6 +8,7 @@ interface IImage {
   className?: string;
   layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive' | 'raw' | undefined;
   objectFit?: 'cover' | 'contain';
+  objectPosition?: 'center' | 'top' | 'bottom';
 }
 
 export const CustomImage: FC<IImage> = ({
@@ -15,6 +16,7 @@ export const CustomImage: FC<IImage> = ({
   className,
   layout = `responsive`,
   objectFit,
+  objectPosition,
 }) => {
   return (
     <div className={`${styles.container} ${className}`}>
@@ -25,6 +27,7 @@ export const CustomImage: FC<IImage> = ({
         height={500}
         layout={layout}
         objectFit={objectFit}
+        objectPosition={objectPosition}
         className={styles.image}
       />
     </div>

@@ -2,7 +2,6 @@
 
 .root {
   width: 100%;
-  background-color: $c_white;
 }
 
 .title {
@@ -40,7 +39,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background-color: $c_secondary;
+  background-color: rgba($color: $c_orange, $alpha: 0.5);
+  backdrop-filter: blur(10px);
   z-index: -1;
 
   @include md {
@@ -69,6 +69,7 @@
     max-width: 60%;
 
     @include md {
+      padding-top: 150px;
       font-size: 32px;
       max-width: 100%;
     }

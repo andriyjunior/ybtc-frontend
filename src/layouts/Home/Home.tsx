@@ -3,11 +3,11 @@ import { AnimationLayout } from '@/layouts';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Card } from './parts';
+import { useIsMobile } from '@/hooks';
 
 import styles from './Home.module.scss';
 
-import header_ph from 'public/images/header.jpg';
-import { useIsMobile } from '@/hooks';
+import header_ph from 'public/images/content/header.jpg';
 
 const cardsMock = [
   {
@@ -35,8 +35,8 @@ const Home = () => {
 
   const { isMobile } = useIsMobile();
 
-  const imageAnimation = isMobile ? { x: 0 } : { x: `30%` };
-  const overlayAnimation = isMobile ? { x: 0 } : { x: `-40%` };
+  const imageAnimation = isMobile ? { x: 0, scale: 1 } : { x: 0, scale: 1.3 };
+  const overlayAnimation = isMobile ? { y: 0 } : { y: 0 };
   return (
     <AnimationLayout>
       <div className={styles.root}>
@@ -57,12 +57,13 @@ const Home = () => {
               layout="fill"
               objectFit="cover"
               className={styles.image}
+              objectPosition="center"
             />
           </motion.div>
           <motion.div
-            initial={{ x: `-100%` }}
+            initial={{ y: `100%` }}
             animate={overlayAnimation}
-            transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
+            transition={{ delay: 2.5, ease: `easeInOut`, duration: 1 }}
             className={styles.overlay}
           />
 
