@@ -8,9 +8,9 @@
 
 .mouse {
   position: relative;
-  height: 30px;
-  width: 16px;
-  border: 1px solid $c_white;
+  height: 50px;
+  width: 30px;
+  border: 2px solid $c_white;
   border-radius: 100px;
   cursor: pointer;
   animation: down-up-pulse 2s ease-in-out infinite forwards;
@@ -21,7 +21,7 @@
   top: 0;
   left: 50%;
   height: 5px;
-  border: 0.5px solid $c_white;
+  border: 1px solid $c_white;
   border-radius: 10px;
   transform: translate(-50%);
   animation: wheel-down 2s ease-in-out infinite forwards;
@@ -46,9 +46,15 @@
     height: 0px;
   }
 
+  10% {
+    top: 2px;
+    opacity: 1;
+    height: 2px;
+  }
+
   50% {
     opacity: 1;
-    height: 7px;
+    height: 14px;
   }
 
   100% {
