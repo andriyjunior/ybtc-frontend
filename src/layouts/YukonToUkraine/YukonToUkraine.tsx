@@ -1,4 +1,4 @@
-import { Image, PayPalButton } from '@/components';
+import { Image, PayPalButton, Text } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { useTranslation } from 'react-i18next';
 
@@ -14,10 +14,7 @@ const YukonToUkraine = () => {
           <Image src="/images/logo-flag.png" className={styles.imageLogo} />
         </div>
         <div className={styles.body}>
-          <div
-            className={styles.text}
-            dangerouslySetInnerHTML={{ __html: t(`yukonToUkraine.body`) }}
-          />
+          <Text data={t(`yukonToUkraine.body`)} />
           <div className={styles.payment}>
             <span className={styles.paymentTitle}>{t(`payment.methods`)}</span>
             <PayPalButton />

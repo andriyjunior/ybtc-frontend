@@ -1,0 +1,24 @@
+@import 'styles';
+
+.root {
+  padding-right: 16px;
+  width: 100%;
+  text-align: justify;
+
+  strong {
+    color: $c_blue;
+  }
+
+  a {
+    width: 100%;
+    word-wrap: break-word;
+    color: $c_blue;
+    width: 100px;
+  }
+
+  @include md {
+    padding: 0 16px;
+    flex-direction: column;
+    width: 100%;
+  }
+}

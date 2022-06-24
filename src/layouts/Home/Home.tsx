@@ -35,7 +35,6 @@ const Home = () => {
 
   const { isMobile } = useIsMobile();
 
-  const imageAnimation = isMobile ? { x: 0, scale: 1 } : { x: 0, scale: 1.3 };
   const overlayAnimation = isMobile ? { y: 0 } : { y: 0 };
   return (
     <AnimationLayout>
@@ -48,7 +47,7 @@ const Home = () => {
         >
           <motion.div
             initial={{ x: 0 }}
-            animate={imageAnimation}
+            animate={{ x: 0, scale: 1.3 }}
             transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
             className={styles.imageWrapper}
           >
@@ -109,7 +108,7 @@ const Home = () => {
               />
             ))}
           </div>
-          <HorizontalSeparator />
+
           <div className={styles.recentTweets}>
             <h3 className={styles.title}>Recent Tweets</h3>
             <div className={styles.tweets}>

@@ -5,3 +5,4 @@ export * from './Home';
 export * from './ContactUs';
 export * from './YukonToUkraine';
 export * from './Success';
+export * from './Gallery';

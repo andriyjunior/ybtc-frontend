@@ -1,3 +1,4 @@
+import { HorizontalSeparator, Text } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { useTranslation } from 'react-i18next';
 
@@ -9,10 +10,9 @@ const AboutLayout = () => {
   return (
     <AnimationLayout>
       <div className={styles.root}>
-        <div
-          className={styles.text}
-          dangerouslySetInnerHTML={{ __html: t(`about.body`) }}
-        />
+        <Text data={t(`about.body`)} />
+        <HorizontalSeparator />
+        <Text data={t(`about.links`)} />
       </div>
     </AnimationLayout>
   );
