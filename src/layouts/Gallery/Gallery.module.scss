@@ -1,0 +1,58 @@
+@import 'styles';
+
+.root {
+  width: $app_width;
+  margin: 0 auto;
+
+  @include xl {
+    width: 100%;
+    padding: 0px 16px;
+  }
+
+  @include md {
+    padding: 0px 16px;
+    width: 100%;
+  }
+}
+
+.mansoryGrid {
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+
+  @include md {
+    margin-left: -16px;
+  }
+}
+.mansoryGridColumn {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+
+  @include md {
+    padding-left: 16px;
+  }
+}
+
+/* Style your items */
+.mansoryGridColumn > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+
+  @include md {
+    margin-bottom: 16px;
+  }
+}
+
+.imgWrap {
+  overflow: hidden;
+}
+
+.img {
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

@@ -8,13 +8,14 @@ export const ROUTES = [
     key: `YukonToUkraine`,
   },
   {
+    href: `/gallery`,
+    key: `gallery`,
+  },
+  {
     href: `/about`,
     key: `about`,
   },
-  // {
-  //   href: `/gallery`,
-  //   key: `gallery`,
-  // },
+
   // {
   //   href: `/contact-us`,
   //   key: `contacts`,

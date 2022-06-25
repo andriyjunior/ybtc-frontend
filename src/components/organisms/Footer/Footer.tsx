@@ -20,14 +20,14 @@ const Footer: FC = () => {
             <span className={styles.item}>{t(`footer.contacts.company`)}</span>
             <span className={styles.item}>{t(`footer.contacts.adress1`)}</span>
             <span className={styles.item}>{t(`footer.contacts.adress2`)}</span>
-            <span className={styles.item}>
+            {/* <span className={styles.item}>
               780.266.8719 &nbsp;
               <span className={styles.email}>
                 <Link href={`mailto:president@yukontrades.ca`}>
                   president@yukontrades.ca
                 </Link>
               </span>
-            </span>
+            </span> */}
           </span>
         </div>
       </div>

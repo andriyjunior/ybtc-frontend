@@ -109,7 +109,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className={styles.recentTweets}>
+          {/* <div className={styles.recentTweets}>
             <h3 className={styles.title}>Recent Tweets</h3>
             <div className={styles.tweets}>
               <Twit />
@@ -117,7 +117,7 @@ const Home = () => {
               <Twit />
               <Twit />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </AnimationLayout>

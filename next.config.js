@@ -13,4 +13,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src')],
   },
+  images: {
+    domains: ['i.ibb.co'],
+  },
 };

@@ -2,7 +2,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Gallery as GalleryLayout } from '@/layouts';
 
 const Gallery = () => {
-  return <>{/* <GalleryLayout /> */}</>;
+  return (
+    <>
+      <GalleryLayout />
+    </>
+  );
 };
 
 export default Gallery;
