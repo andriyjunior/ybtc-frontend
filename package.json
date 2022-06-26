@@ -1,9 +1,8 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "ybtc-frontend",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (@jpedroschmitz)",
+  "author": "andriyjunior",
   "license": "MIT",
   "keywords": [
     "nextjs",
@@ -14,6 +13,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "setup": "npm install --legacy-peer-deps",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",

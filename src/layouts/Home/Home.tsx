@@ -17,16 +17,16 @@ const cardsMock = [
     href: `/YukonToUkraine`,
   },
   {
-    icon: `cta`,
-    title: `Yukon to Ukraine`,
-    description: `Learn more about organizing and the unionization process for your workplace`,
-    href: `#`,
+    icon: `image`,
+    title: `Gallery`,
+    description: `See more about organizing`,
+    href: `/gallery`,
   },
   {
     icon: `cta`,
-    title: `Yukon to Ukraine`,
-    description: `Learn more about organizing and the unionization process for your workplace`,
-    href: `#`,
+    title: `About us`,
+    description: `The Yukon Building Trades Council (YBTC) was chartered in 1968 by the Building and Construction Trades Department of the A.F.L. – C.I.O`,
+    href: `/about`,
   },
 ];
 
