@@ -7,15 +7,17 @@ interface IMeta {
 }
 
 interface IProps {
-  title: string;
-  desc: IMeta[];
+  title?: string;
+  desc?: IMeta[];
+  description?: string;
 }
 
-const CustomHead: FC<IProps> = ({ title, desc }) => {
+const CustomHead: FC<IProps> = ({ title, desc, description }) => {
   return (
     <Head>
       <title>{title}</title>
-      {desc.map(({ content, name }) => {
+      <meta name={`description`} content={description} />;
+      {desc?.map(({ content, name }) => {
         return <meta key={content} name={name} content={content} />;
       })}
     </Head>

@@ -2,29 +2,32 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AboutLayout } from '@/layouts';
 import { Head } from '@/components';
 import { useTranslation } from 'react-i18next';
+import { getPage, PageDTO } from '@/api';
+import { useRouter } from 'next/router';
 
-const About = () => {
-  const { t } = useTranslation();
-
-  const desc = [
-    {
-      name: t(`about.meta.description.name`),
-      content: t(`about.meta.description.content`),
-    },
-  ];
+const About = ({ data }: { data: PageDTO }) => {
+  const { locale }: any = useRouter();
 
   return (
     <>
-      <Head title={t(`about.meta.title`)} desc={desc} />
-      <AboutLayout />
+      <Head
+        title={data.meta.title[locale]}
+        description={data.meta.description[locale]}
+      />
+      <AboutLayout body={data.body[locale]} />
     </>
   );
 };
 
 export default About;
 
-export const getStaticProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale)),
-  },
-});
+export const getServerSideProps = async ({ locale }: any) => {
+  const data = await getPage(`about`);
+
+  return {
+    props: {
+      data: data.data.data,
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+};
