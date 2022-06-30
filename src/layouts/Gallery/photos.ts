@@ -45,27 +45,27 @@ export const photos = [
     src: `https://i.ibb.co/pn85n7p/IMG-20151124-084343.jpg`,
   },
   {
-    src: ` https://i.ibb.co/KqHQWMQ/IMG-20151124-084339.jpg`,
+    src: `https://i.ibb.co/KqHQWMQ/IMG-20151124-084339.jpg`,
   },
   {
-    src: ` https://i.ibb.co/4f54L6S/IMG-20151124-085512.jpg`,
+    src: `https://i.ibb.co/4f54L6S/IMG-20151124-085512.jpg`,
   },
   {
-    src: ` https://i.ibb.co/jHsSrVR/IMG-20151124-085516.jpg`,
+    src: `https://i.ibb.co/jHsSrVR/IMG-20151124-085516.jpg`,
   },
   {
-    src: ` https://i.ibb.co/K9n4mBX/IMG-20151124-144058.jpg`,
+    src: `https://i.ibb.co/K9n4mBX/IMG-20151124-144058.jpg`,
   },
   {
-    src: ` https://i.ibb.co/JFy8qMy/IMG-20160118-124733.jpg`,
+    src: `https://i.ibb.co/JFy8qMy/IMG-20160118-124733.jpg`,
   },
   {
-    src: ` https://i.ibb.co/Rbs77Fr/IMG-20160118-124750.jpg`,
+    src: `https://i.ibb.co/Rbs77Fr/IMG-20160118-124750.jpg`,
   },
   {
-    src: ` https://i.ibb.co/YW7Mgwq/IMG-20160118-131536.jpg`,
+    src: `https://i.ibb.co/YW7Mgwq/IMG-20160118-131536.jpg`,
   },
   {
-    src: ` https://i.ibb.co/V9T4KcZ/IMG-20160118-131546.jpg`,
+    src: `https://i.ibb.co/V9T4KcZ/IMG-20160118-131546.jpg`,
   },
 ];

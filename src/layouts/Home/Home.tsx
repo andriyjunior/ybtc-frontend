@@ -36,13 +36,13 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: `easeOut`, duration: 6 }}
+          transition={{ ease: `easeOut`, duration: 1 }}
           className={styles.header}
         >
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: 0, scale: 1.3 }}
-            transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
+            transition={{ delay: 1, ease: `easeInOut`, duration: 6 }}
             className={styles.imageWrapper}
           >
             <Image
