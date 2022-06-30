@@ -1,7 +1,16 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ContactUsLayout } from '@/layouts';
+import Head from 'next/head';
 
 const ContactUs = () => {
-  return <div>ContactUs</div>;
+  return (
+    <>
+      <Head>
+        <title>Yukon Trades</title>
+      </Head>
+      <ContactUsLayout />
+    </>
+  );
 };
 
 export default ContactUs;
