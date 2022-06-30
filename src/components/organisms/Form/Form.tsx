@@ -65,7 +65,7 @@ const Form: FC<IForm> = ({ onSuccess }) => {
         <h3 className={styles.title}>Contact form</h3>
         <Input
           label={t(`form.name`)}
-          placeholder={`Enter your name`}
+          placeholder={`Jeff`}
           name={`name`}
           error={errors.name}
           touched={touchedFields.name}
@@ -77,6 +77,7 @@ const Form: FC<IForm> = ({ onSuccess }) => {
         <Input
           label={`Email`}
           name={`email`}
+          placeholder={`jeff@yukontrades.ca`}
           error={errors.email}
           touched={touchedFields.email}
           required
@@ -88,6 +89,7 @@ const Form: FC<IForm> = ({ onSuccess }) => {
         <Input
           label={t(`form.phone`)}
           name={`phone`}
+          placeholder={`+1 234 567 89`}
           type="tel"
           touched={touchedFields.phone}
           register={register}
