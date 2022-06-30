@@ -14,13 +14,14 @@ const ContactUs = () => {
     window.scrollTo(0, 0);
     setSent(true);
   };
+
   return (
     <AnimationLayout>
       <div className={styles.root}>
         <div className={styles.head}>
           <h3 className={styles.title}>Follow us on Social Media</h3>
           <span className={styles.icon}>
-            <Link href="$">
+            <Link href={`https://twitter.com/`}>
               <Image src={twitter_icon} width={36} height={36} />
             </Link>
           </span>
