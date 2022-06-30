@@ -1,20 +1,31 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Head } from '@/components';
 import { YukonToUkraine } from '@/layouts';
+import { getPage, PageDTO } from '@/api';
+import { useRouter } from 'next/router';
 
-const yukonToUkraine = () => {
+const YukonToUkrainePage = ({ data }: { data: PageDTO }) => {
+  const { locale }: any = useRouter();
   return (
     <>
-      <Head title={`Yukon Trades - Home`} desc={[]} />
-      <YukonToUkraine />
+      <Head
+        title={data.meta.title[locale]}
+        description={data.meta.description[locale]}
+      />
+      <YukonToUkraine body={data.body[locale]} />
     </>
   );
 };
 
-export default yukonToUkraine;
+export default YukonToUkrainePage;
 
-export const getStaticProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale)),
-  },
-});
+export const getServerSideProps = async ({ locale }: any) => {
+  const data = await getPage(`YukonToUkraine`);
+
+  return {
+    props: {
+      data: data.data.data,
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+};

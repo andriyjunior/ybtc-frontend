@@ -1,10 +1,16 @@
 import { Image, PayPalButton, Text } from '@/components';
 import { AnimationLayout } from '@/layouts';
+import { ILang } from '@/api';
 import { useTranslation } from 'react-i18next';
 
 import styles from './YukonToUkraine.module.scss';
+import { FC } from 'react';
 
-const YukonToUkraine = () => {
+interface IYukonToUkraine {
+  body: string;
+}
+
+const YukonToUkraine: FC<IYukonToUkraine> = ({ body }) => {
   const { t } = useTranslation();
   return (
     <AnimationLayout>
@@ -14,7 +20,7 @@ const YukonToUkraine = () => {
           <Image src="/images/logo-flag.png" className={styles.imageLogo} />
         </div>
         <div className={styles.body}>
-          <Text data={t(`yukonToUkraine.body`)} />
+          <Text data={body} />
           <div className={styles.payment}>
             <span className={styles.paymentTitle}>{t(`payment.methods`)}</span>
             <PayPalButton />
