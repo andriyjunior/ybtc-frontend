@@ -68,9 +68,11 @@
 
 .link {
   padding-top: 12px;
+  font-size: 20px;
 
   &.active {
     color: $c_blue;
+    font-weight: bold;
   }
 }
 
