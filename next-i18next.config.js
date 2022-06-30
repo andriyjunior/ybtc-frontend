@@ -7,6 +7,5 @@ module.exports = {
     localePath: path.resolve('public/locales'),
     localeDetection: false,
     fallbackLng: 'en',
-    serializeConfig: false,
   },
 };
