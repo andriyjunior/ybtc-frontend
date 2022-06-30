@@ -18,7 +18,7 @@ interface IInputProps {
   pattern?: ValidationRule<RegExp>;
 }
 
-export const Input: FC<IInputProps> = ({
+const Input: FC<IInputProps> = ({
   label,
   placeholder,
   error,
@@ -53,3 +53,5 @@ export const Input: FC<IInputProps> = ({
     </div>
   );
 };
+
+export default Input;

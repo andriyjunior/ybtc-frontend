@@ -15,7 +15,7 @@ interface ITextAreaProps {
   required?: boolean;
 }
 
-export const TextArea: FC<ITextAreaProps> = ({
+const TextArea: FC<ITextAreaProps> = ({
   label,
   placeholder,
   error,
@@ -44,3 +44,5 @@ export const TextArea: FC<ITextAreaProps> = ({
     </div>
   );
 };
+
+export default TextArea;
