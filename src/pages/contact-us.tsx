@@ -4,12 +4,12 @@ import Head from 'next/head';
 
 const ContactUs = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Yukon Trades</title>
       </Head>
       <ContactUsLayout />
-    </div>
+    </>
   );
 };
 
