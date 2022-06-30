@@ -1,6 +1,7 @@
 @import 'styles';
 
 .root {
+  padding-top: 24px;
   width: $app_width;
   margin: 0 auto;
 
@@ -41,18 +42,5 @@
 
   @include md {
     margin-bottom: 16px;
-  }
-}
-
-.imgWrap {
-  overflow: hidden;
-}
-
-.img {
-  transition: transform 0.2s ease-out;
-
-  &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
   }
 }

@@ -5,6 +5,7 @@
 .history
 /.pnp
 .pnp.js
+package-lock.json
 
 # JetBrains IDE files
 .idea/

@@ -1,0 +1,44 @@
+@import 'styles';
+
+.root {
+  padding-top: 14px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  color: $c_dark;
+}
+
+.error {
+  padding-top: 2px;
+  padding-left: 12px;
+  align-self: flex-start;
+  font-size: 12px;
+  color: $c_red;
+}
+
+.text {
+  margin-top: 6px;
+  width: 100%;
+  padding-left: 12px;
+  padding-top: 6px;
+  min-height: 70px;
+  background: none;
+  border: 1px solid $c_dark;
+  resize: vertical;
+  font-family: inherit;
+  border-radius: 4px;
+  font-size: 14px;
+  color: $c_dark;
+  transition: border 0.1s ease-in;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $c_blue;
+  }
+
+  &.error {
+    border-color: $c_red;
+  }
+}
