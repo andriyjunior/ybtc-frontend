@@ -10,30 +10,15 @@ import Head from 'next/head';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
-      </Head>
-      <NextNProgress
-        color="#29D"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-        showOnShallow={true}
-      />
-      <AnimatePresence
-        initial={true}
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <CommonLayout key={router.route} {...pageProps}>
-          <Component {...pageProps} />
-        </CommonLayout>
-      </AnimatePresence>
-    </>
+    <AnimatePresence
+      initial={true}
+      exitBeforeEnter
+      onExitComplete={() => window.scrollTo(0, 0)}
+    >
+      <CommonLayout key={router.route} {...pageProps}>
+        <Component {...pageProps} />
+      </CommonLayout>
+    </AnimatePresence>
   );
 }
 
