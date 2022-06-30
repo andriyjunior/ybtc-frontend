@@ -29,6 +29,8 @@ const Form: FC<IForm> = ({ onSuccess }) => {
   const { t } = useTranslation();
   const [isLoading, setLoading] = useState(false);
 
+  console.log(t(`form.name`));
+
   const {
     register,
     handleSubmit,
