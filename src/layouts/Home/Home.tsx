@@ -1,9 +1,8 @@
-import { HorizontalSeparator, Image, LinkToArticle, Twit } from '@/components';
+import { Image, LinkToArticle } from '@/components';
 import { AnimationLayout } from '@/layouts';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+
 import { Card } from './parts';
-import { useIsMobile } from '@/hooks';
 
 import styles from './Home.module.scss';
 
@@ -31,24 +30,19 @@ const cardsMock = [
 ];
 
 const Home = () => {
-  const { t } = useTranslation();
-
-  const { isMobile } = useIsMobile();
-
-  const overlayAnimation = isMobile ? { y: 0 } : { y: 0 };
   return (
     <AnimationLayout>
       <div className={styles.root}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ ease: `easeOut`, duration: 1 }}
           className={styles.header}
         >
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: 0, scale: 1.3 }}
-            transition={{ delay: 2, ease: `easeInOut`, duration: 1 }}
+            transition={{ delay: 1, ease: `easeInOut`, duration: 6 }}
             className={styles.imageWrapper}
           >
             <Image
@@ -61,7 +55,7 @@ const Home = () => {
           </motion.div>
           <motion.div
             initial={{ y: `100%` }}
-            animate={overlayAnimation}
+            animate={{ y: 0 }}
             transition={{ delay: 2.5, ease: `easeInOut`, duration: 1 }}
             className={styles.overlay}
           />

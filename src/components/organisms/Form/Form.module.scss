@@ -1,0 +1,56 @@
+@import 'styles';
+
+.root {
+  padding: 32px 0;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: $c_blue;
+}
+
+.form {
+  padding: 64px 42px;
+  padding-top: 12px;
+  width: 630px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 4px 4px 16px rgba($color: $c_dark, $alpha: 0.2);
+
+  @include xl {
+    width: 100%;
+  }
+}
+
+.button {
+  margin-top: 40px;
+  width: 240px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  border: 1px solid $c_blue;
+  border-radius: 4px;
+  color: $c_blue;
+  font-size: 16px;
+  cursor: pointer;
+  transition-property: background-color color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+
+  &:hover {
+    background-color: $c_blue;
+    color: $c_white;
+  }
+
+  @include md {
+    width: 100%;
+    height: 46px;
+  }
+}

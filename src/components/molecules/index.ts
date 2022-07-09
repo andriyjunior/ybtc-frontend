@@ -5,3 +5,5 @@ export * from './Image';
 export * from './HorizontalSeparator';
 export * from './LinkToArticle';
 export * from './ToScrollUp';
+export * from './Input';
+export * from './TextArea';
