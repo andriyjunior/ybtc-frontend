@@ -33,16 +33,11 @@ const Home = () => {
   return (
     <AnimationLayout>
       <div className={styles.root}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: `easeOut`, duration: 1 }}
-          className={styles.header}
-        >
+        <div className={styles.header}>
           <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: 0, scale: 1.3 }}
-            transition={{ delay: 1, ease: `easeInOut`, duration: 6 }}
+            initial={{ x: 0, scale: 1 }}
+            animate={{ x: 0, scale: 1.1 }}
+            transition={{ ease: `easeInOut`, duration: 6 }}
             className={styles.imageWrapper}
           >
             <Image
@@ -56,7 +51,13 @@ const Home = () => {
           <motion.div
             initial={{ y: `100%` }}
             animate={{ y: 0 }}
-            transition={{ delay: 2.5, ease: `easeInOut`, duration: 1 }}
+            transition={{ delay: 1, ease: `easeOut`, duration: 2 }}
+            className={styles.overlay}
+          />
+          <motion.div
+            initial={{ y: `100%` }}
+            animate={{ y: 0 }}
+            transition={{ delay: 1.5, ease: `easeOut`, duration: 2 }}
             className={styles.overlay}
           />
 
@@ -64,7 +65,7 @@ const Home = () => {
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2.8, duration: 1 }}
+              transition={{ delay: 1.8, duration: 1 }}
               className={styles.title}
             >
               Yukon Building Trades Council
@@ -72,7 +73,7 @@ const Home = () => {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 3, duration: 1 }}
+              transition={{ delay: 2, duration: 1 }}
               className={styles.description}
             >
               The Yukon Government will be making a further financial
@@ -88,7 +89,7 @@ const Home = () => {
               <LinkToArticle href="#main" />
             </motion.div>
           </div>
-        </motion.div>
+        </div>
 
         <div id="main" className={styles.main}>
           <div className={styles.cards}>

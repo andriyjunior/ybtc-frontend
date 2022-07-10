@@ -15,14 +15,14 @@
 
 .fixed {
   position: sticky;
-  height: 50px;
+  height: 60px;
   top: -100%;
   background-color: rgba($color: $c_white, $alpha: 0.9);
   animation: down 0.5s forwards;
   z-index: 1;
 
   @include md {
-    height: 40px;
+    height: 50px;
   }
 }
 
