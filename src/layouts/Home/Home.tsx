@@ -63,16 +63,16 @@ const Home = () => {
 
           <div className={styles.content}>
             <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.8, duration: 1 }}
               className={styles.title}
             >
               Yukon Building Trades Council
             </motion.h1>
             <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2, duration: 1 }}
               className={styles.description}
             >

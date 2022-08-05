@@ -8,6 +8,7 @@ import { useIsMobile } from '@/hooks';
 import styles from './Gallery.module.scss';
 import { photos } from './photos';
 import { Photo } from './parts';
+import { Header } from '@/components';
 
 const Gallery: FC = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -49,33 +50,36 @@ const Gallery: FC = () => {
   const prevSrc = photoIndex ? photos[photoIndex - 1].src : photos[0].src;
 
   return (
-    <div className={styles.root}>
-      <Masonry
-        breakpointCols={isMobile ? 2 : 3}
-        className={styles.mansoryGrid}
-        columnClassName={styles.mansoryGridColumn}
-      >
-        {photos.map((item, idx) => (
-          <Photo
-            key={item.src}
-            onClick={() => handleOpen(idx)}
-            href={item.src}
-          />
-        ))}
-      </Masonry>
+    <>
+      <Header title="Yukon Trades Gallery" />
+      <div className={styles.root}>
+        <Masonry
+          breakpointCols={isMobile ? 2 : 3}
+          className={styles.mansoryGrid}
+          columnClassName={styles.mansoryGridColumn}
+        >
+          {photos.map((item, idx) => (
+            <Photo
+              key={item.src}
+              onClick={() => handleOpen(idx)}
+              href={item.src}
+            />
+          ))}
+        </Masonry>
 
-      {isOpen && (
-        <Lightbox
-          onImageLoad={() => setInited(true)}
-          mainSrc={photos[photoIndex].src}
-          nextSrc={nextSrc}
-          prevSrc={prevSrc}
-          onCloseRequest={handleClose}
-          onMoveNextRequest={handleNextMove}
-          onMovePrevRequest={handlePrevMove}
-        />
-      )}
-    </div>
+        {isOpen && (
+          <Lightbox
+            onImageLoad={() => setInited(true)}
+            mainSrc={photos[photoIndex].src}
+            nextSrc={nextSrc}
+            prevSrc={prevSrc}
+            onCloseRequest={handleClose}
+            onMoveNextRequest={handleNextMove}
+            onMovePrevRequest={handlePrevMove}
+          />
+        )}
+      </div>
+    </>
   );
 };
 

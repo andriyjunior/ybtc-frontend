@@ -4,3 +4,4 @@ export * from './Twit';
 export * from './Modal';
 export * from './Text';
 export * from './Form';
+export * from './Header';

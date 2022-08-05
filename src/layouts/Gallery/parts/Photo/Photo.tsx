@@ -12,7 +12,7 @@ interface IPhotoProps {
 
 const variants = {
   visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 80 },
 };
 
 export const Photo: FC<IPhotoProps> = ({ href, onClick }) => {
@@ -31,7 +31,7 @@ export const Photo: FC<IPhotoProps> = ({ href, onClick }) => {
       variants={variants}
       initial={`hidden`}
       animate={controls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
       ref={ref}
       className={styles.imgWrap}
     >

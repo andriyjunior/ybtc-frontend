@@ -26,7 +26,7 @@
   }
 }
 .mansoryGridColumn {
-  padding-left: 30px; /* gutter size */
+  padding-left: 16px; /* gutter size */
   background-clip: padding-box;
 
   @include md {
@@ -38,7 +38,7 @@
 .mansoryGridColumn > div {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 
   @include md {
     margin-bottom: 16px;
